@@ -45,7 +45,19 @@
 </ol>
 
 <form action="@Url.Action("Handle", "Attachment")"
-    class="dropzone"
-    method="POST"
-    id="my-awesome-dropzone">
+      class="dropzone"
+      method="POST"
+      id="my-awesome-dropzone">
 </form>
+
+<script type="text/javascript">
+    Dropzone.options.myAwesomeDropzone = {
+        parallelUploads: 2,
+        headers: {
+            'X-ComponentId': '@Guid.NewGuid()'
+        },
+        success: function (a, b) {
+            alert(b);
+        }
+    };
+</script>
