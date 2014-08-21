@@ -8,6 +8,13 @@ namespace DropzoneFileUpload
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
+            bundles.Add(new ScriptBundle("~/bundles/dropzonejs").Include(
+                        "~/Scripts/dropzone/dropzone.js"));
+
+            bundles.Add(new StyleBundle("~/Content/dropzonecss").Include(
+                "~/Scripts/dropzone/css/basic.css",
+                "~/Scripts/dropzone/css/dropzone.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
