@@ -44,14 +44,17 @@
     </li>
 </ol>
 
-<form action="@Url.Action("Handle", "Attachment")"
+@*<form action="@Url.Action("Handle", "Attachment")"
       class="dropzone"
       method="POST"
       id="my-awesome-dropzone">
-</form>
+</form>*@
+
+<div id="my-awesome-dropzone" class="dropzone"></div>
 
 <script type="text/javascript">
     Dropzone.options.myAwesomeDropzone = {
+        url: '@Url.Action("Handle", "Attachment")',
         parallelUploads: 2,
         headers: {
             'X-ComponentId': '@Guid.NewGuid()'
